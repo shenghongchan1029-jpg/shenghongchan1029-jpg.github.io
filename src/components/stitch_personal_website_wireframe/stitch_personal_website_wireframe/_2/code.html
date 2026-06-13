@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | PM_NEXUS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#090f15",
+                    "tertiary-fixed": "#ffddbb",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#454747",
+                    "on-tertiary-fixed": "#2b1700",
+                    "surface-variant": "#30353d",
+                    "primary-container": "#5e6ad2",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#4854bb",
+                    "error-container": "#93000a",
+                    "surface-bright": "#343a41",
+                    "tertiary-fixed-dim": "#ffb867",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "inverse-surface": "#dee3ec",
+                    "surface-container-highest": "#30353d",
+                    "primary": "#bdc2ff",
+                    "on-primary-fixed": "#000965",
+                    "background": "#0e141a",
+                    "on-surface": "#dee3ec",
+                    "secondary": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#673d00",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-tertiary": "#482900",
+                    "surface-container-low": "#171c23",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface": "#0e141a",
+                    "on-background": "#dee3ec",
+                    "surface-container": "#1b2027",
+                    "on-surface-variant": "#c6c5d5",
+                    "tertiary-container": "#a56500",
+                    "on-primary-container": "#fdfaff",
+                    "outline-variant": "#454652",
+                    "surface-dim": "#0e141a",
+                    "inverse-on-surface": "#2c3138",
+                    "surface-tint": "#bdc2ff",
+                    "tertiary": "#ffb867",
+                    "on-secondary-fixed-variant": "#454747",
+                    "outline": "#908f9e",
+                    "on-tertiary-container": "#fffaf8",
+                    "on-secondary": "#2f3131",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#2e3aa2",
+                    "primary-fixed": "#dfe0ff",
+                    "surface-container-high": "#252a32",
+                    "on-primary": "#121f8b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-desktop": "48px",
+                    "unit": "4px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-xl": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-sm": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #020203;
+            color: #dee3ec;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-panel {
+            background: rgba(5, 5, 6, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 40px rgba(94, 106, 210, 0.05);
+        }
+
+        .input-accent-line {
+            position: relative;
+        }
+        .input-accent-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: #bdc2ff;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-50%);
+        }
+        .input-accent-line:focus-within::after {
+            width: 100%;
+        }
+
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .shimmer-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+        }
+        .animate-pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+
+        .expo-out {
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-primary/30 selection:text-primary">
+
+<!-- Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.5),0_0_40px_rgba(94,106,210,0.05)]">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">PM_NEXUS</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105" href="#">About Me</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105" href="#">Projects</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105" href="#">Contact</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-2.5 rounded-full font-bold hover:scale-[1.02] transition-all duration-300 border-t border-white/20">
+                Download Resume
+            </button>
+</div>
+</header>
+<main class="relative z-10 pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Content Header -->
+<div class="mb-16 animate-fade-in" style="animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-green-400 animate-pulse-green"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Available for Hire</span>
+</div>
+<h1 class="font-display-xl text-display-xl md:text-display-xl text-on-surface mb-4">联系我们</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                无论是新的项目合作还是技术交流，我都非常乐意听取您的想法。请通过以下方式与我取得联系。
+            </p>
+</div>
+<!-- Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left: Glass Contact Form -->
+<div class="lg:col-span-7 glass-panel rounded-2xl p-8 md:p-12 animate-fade-in-up" style="animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0;">
+<form class="space-y-8" id="contact-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="input-accent-line">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">姓名</label>
+<input class="w-full bg-[#0A0A0B] border border-white/5 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:ring-0 transition-all font-body-md text-body-md placeholder:text-outline/30" placeholder="您的姓名" type="text"/>
+</div>
+<div class="input-accent-line">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">邮箱</label>
+<input class="w-full bg-[#0A0A0B] border border-white/5 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:ring-0 transition-all font-body-md text-body-md placeholder:text-outline/30" placeholder="example@domain.com" type="email"/>
+</div>
+</div>
+<div class="input-accent-line">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">主题</label>
+<input class="w-full bg-[#0A0A0B] border border-white/5 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:ring-0 transition-all font-body-md text-body-md placeholder:text-outline/30" placeholder="合作意向" type="text"/>
+</div>
+<div class="input-accent-line">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">消息详情</label>
+<textarea class="w-full bg-[#0A0A0B] border border-white/5 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:ring-0 transition-all font-body-md text-body-md placeholder:text-outline/30 resize-none" placeholder="描述您的需求或问题..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.98] transition-all duration-300 border-t border-white/20 shadow-lg shadow-primary/10" type="submit">
+                        发送消息
+                        <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+<!-- Right: Direct Channels -->
+<div class="lg:col-span-5 space-y-6">
+<h3 class="font-headline-md text-headline-md text-on-surface px-2">直接联系渠道</h3>
+<!-- Email Card -->
+<div class="shimmer-card glass-panel rounded-2xl p-6 flex items-center gap-6 group hover:translate-x-2 transition-transform expo-out cursor-pointer">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Email</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">hello@pmnexus.dev</div>
+</div>
+</div>
+<!-- GitHub Card -->
+<div class="shimmer-card glass-panel rounded-2xl p-6 flex items-center gap-6 group hover:translate-x-2 transition-transform expo-out cursor-pointer">
+<div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">GitHub</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">github.com/pmnexus</div>
+</div>
+</div>
+<!-- LinkedIn Card -->
+<div class="shimmer-card glass-panel rounded-2xl p-6 flex items-center gap-6 group hover:translate-x-2 transition-transform expo-out cursor-pointer">
+<div class="w-14 h-14 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary border border-tertiary/20">
+<span class="material-symbols-outlined text-3xl">person</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">LinkedIn</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary transition-colors">linkedin.com/in/pmnexus</div>
+</div>
+</div>
+<!-- Bottom Hint -->
+<div class="p-8 border border-white/5 rounded-2xl bg-surface-container-low/50">
+<p class="font-body-md text-body-md text-outline italic">
+                        "通常我会在 24 小时内回复所有专业咨询。期待您的来信。"
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="relative z-10 w-full py-12 px-margin-desktop border-t border-white/5 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="text-on-surface font-black font-headline-md">PM_NEXUS</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+                © 2024 PRECISION ENGINEERED BY PM_NEXUS. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Email</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">GitHub</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<script>
+        // Interactive Shimmer Effect
+        document.querySelectorAll('.shimmer-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // Form Handling
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin">refresh</span> 正在发送...`;
+            btn.classList.add('opacity-80');
+
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> 已成功发送`;
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-600', 'opacity-80');
+                    btn.classList.add('bg-primary');
+                    btn.disabled = false;
+                    form.reset();
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+</body></html>

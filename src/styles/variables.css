@@ -1,0 +1,5 @@
+/* Legacy variable file - kept for compatibility. Primary theme tokens now live in index.css @theme block. */
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --header-height: 80px;
+}
